@@ -15,7 +15,7 @@ class UserApiController extends Controller
     }
     public function index()
     {
-        $data = $this->user->getDataAll();
-        return response()->json(['status'=>'success','data'=>$data]);
+        $data = User::all();
+        return response()->json(['status' => 'success', 'data' => $data]);
     }
 }

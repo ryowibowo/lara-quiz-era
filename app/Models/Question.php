@@ -36,4 +36,10 @@ class Question extends Model
     {
         return $this->belongsTo(Topic::class);
     }
+
+    public function getApiData()
+    {
+        $data = Question::select('questions', 'answer')->orderBy('updated_at', 'desc')->get();
+        return $data;
+    }
 }
