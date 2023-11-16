@@ -62,7 +62,7 @@ class QuizController extends Controller
     public function start($id)
     {
         $result = Topic::find($id);
-        $question = $result->questions;
+        $question = $result->questions()->inRandomOrder()->get();
 
         $startTime = date('Y-m-d H:i:s');
         $timeout = date('Y-m-d H:i:s', strtotime("+$result->time_duration minutes", strtotime($startTime)));

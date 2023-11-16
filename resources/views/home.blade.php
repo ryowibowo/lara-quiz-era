@@ -17,22 +17,76 @@
 
   <!-- [ Main Content ] start -->
   <div class="row">
-    <!-- [ sample-page ] start -->
-    <!-- DOM/Jquery table start -->
-    <div class="col-sm-12">
+    <div class="col-lg-6 col-md-12">
         <div class="card">
-          <div class="card-header">
-            <h5>DOM/Jquery</h5>
-            <small
-              >Events assigned to the table can be exceptionally useful for user interaction, however you must be aware that DataTables
-              will add and remove rows from the DOM.</small
-            >
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-1">{{$getUser}}</h3>
+                <p class="text-muted mb-0">Total User</p>
+              </div>
+              <div class="col-4 text-end">
+                <i class="ti ti-chart-bar text-secondary f-36"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!-- DOM/Jquery table end -->
-    <!-- [ sample-page ] end -->
+      <div class="col-lg-6 col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-1">{{$getTopic}}</h3>
+                <p class="text-muted mb-0">Total Topik Quiz</p>
+              </div>
+              <div class="col-4 text-end">
+                <i class="ti ti-calendar-event text-danger f-36"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
+
+  <div class="col-xl-12 col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h5 class="mb-0">Leaderboards</h5>
+        </div>
+      </div>
+      <div class="table-body card-body pt-0">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th class="text-end">Nilai Rata-Rata</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($userAverages as $userAverage)
+                    <tr>
+                        <td>
+                        <div class="d-flex align-items-center text-muted">
+                            <div class="avtar avtar-xs bg-light-secondary flex-shrink-0 me-2">
+                            </div>
+                            <span class="text-truncate w-100">{{ $userAverage['name'] }}</span>
+                        </div>
+                        </td>
+                        <td class="text-end">{{ round($userAverage['average']) }}</td>
+
+                    </tr>
+                @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 @endsection
 
 @push('after-script')

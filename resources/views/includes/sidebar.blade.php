@@ -1,11 +1,10 @@
 <nav class="pc-sidebar">
     <div class="navbar-wrapper">
         <div class="m-header">
-            {{-- <a href="#" class="b-brand text-primary">
-            <!-- ========   Change your logo from here   ============ -->
-            <img src="{{asset('assets/images/logo-dark.svg')}}" />
-            <span class="badge bg-light-success rounded-pill ms-2 theme-version"></span>
-            </a> --}}
+            <a href="/home" class="b-brand text-primary">
+                <!-- ========   Change your logo from here   ============ -->
+                <img width="70px" src="{{asset('assets/images/quiz.png')}}" />
+                </a>
         </div>
         <div class="navbar-content">
             <div class="card pc-user-card">

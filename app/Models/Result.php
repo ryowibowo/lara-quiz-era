@@ -34,4 +34,8 @@ class Result extends Model
     {
         return $this->belongsTo(ResultDetail::class);
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
