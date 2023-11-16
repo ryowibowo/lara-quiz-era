@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "a4e4989c-917c-4711-8a4c-81d7db952be4",
+		"name": "Era API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9045765"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin111@admin.com\",\r\n    \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://lara-quiz.test/api/login",
+					"protocol": "http",
+					"host": [
+						"lara-quiz",
+						"test"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"asutenan\",\r\n    \"email\": \"admi1@admin.com\",\r\n    \"phone_number\": \"08138389393\",\r\n    \"password\": \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://lara-quiz.test/api/register",
+					"protocol": "http",
+					"host": [
+						"lara-quiz",
+						"test"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Questions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|IWSJhmrJXWKpvRfwHyHVgXfmMPQls0Pp8xjXDrf049efa0b2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://lara-quiz.test/api/getquestions",
+					"protocol": "http",
+					"host": [
+						"lara-quiz",
+						"test"
+					],
+					"path": [
+						"api",
+						"getquestions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|IWSJhmrJXWKpvRfwHyHVgXfmMPQls0Pp8xjXDrf049efa0b2",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://lara-quiz.test/api/getusers",
+					"protocol": "http",
+					"host": [
+						"lara-quiz",
+						"test"
+					],
+					"path": [
+						"api",
+						"getusers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

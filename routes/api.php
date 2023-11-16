@@ -23,7 +23,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-// Route::group(['middleware' => ['auth:sanctum']], function () {
-Route::get('/get-questions', [QuestionApiController::class, 'index'])->name('api.list.question');
-Route::get('/get-users', [UserApiController::class, 'index'])->name('api.list.user');
-// });
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/getquestions', [QuestionApiController::class, 'index'])->name('api.list.question');
+    Route::get('/getusers', [UserApiController::class, 'index'])->name('api.list.user');
+});

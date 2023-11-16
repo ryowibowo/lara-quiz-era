@@ -45,7 +45,13 @@ class AuthController extends Controller
             ];
             $user = User::create($data);
             $token = $user->createToken('auth_token')->plainTextToken;
-            return response()->json(['status' => 'success', 'access_token' => $token, 'token_type' => 'Bearer']);
+            return response()->json([
+                'message' => 'Register success',
+                'data' => $token,
+                'data' => $user,
+                'access_token' => $token,
+                'token_type' => 'Bearer'
+            ]);
         } else {
             return response()->json(['status' => 'success', 'message' => $validator->errors()]);
         }
@@ -63,8 +69,10 @@ class AuthController extends Controller
         $token = $user->createToken('authToken')->plainTextToken;
 
         return response()->json([
+            'message' => 'Login success',
+            'data' => $user,
             'access_token' => $token,
-            'token_type' => 'Bearer',
+            'token_type' => 'Bearer'
         ]);
     }
 }
