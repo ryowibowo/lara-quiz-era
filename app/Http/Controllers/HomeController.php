@@ -29,9 +29,7 @@ class HomeController extends Controller
         $getUser = User::where('role_id', '=', 'b319dbc4-5b29-4eef-9ec9-f83d8cb909a3')->count();
         $getTopic = $getTopics = Topic::count();
 
-        // Assuming you have a User model and a relationship between User and Result models
         $topics = Topic::all();
-
         $users = User::all();
         $userAverages = [];
 
@@ -42,11 +40,15 @@ class HomeController extends Controller
             // Calculate average total score
             $average = $scores->avg('total_score');
             $userAverages[$user->id] = [
-                'name' => $user->name, // Assuming there is a 'name' field in your User model
+                'name' => $user->name,
                 'average' => $average,
             ];
         }
 
+        // Sort user averages array by average score in descending order
+        usort($userAverages, function ($a, $b) {
+            return $b['average'] - $a['average'];
+        });
 
         return view('home', compact(
             'getUser',
